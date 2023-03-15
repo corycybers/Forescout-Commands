@@ -1,0 +1,31 @@
+Forescout KB Article - https://forescout.force.com/support/s/article/How-to-properly-shutdown-and-restart-the-CounterACT-safely-without-risk-of-corruption-of-database-or-OS
+
+## NOTE (Physical Appliance): Before doing this procedure. Understand you will have to have someone with physical access to the server to hit the power button to power it back on.
+
+Here is the procedure you should follow to properly shutdown/power off the appliance. To run these commands you need to be SSH'd into the Appliance or EM. You need to either login as root (if enabled) or invoke the shell command to escalate to a root shell. Then run the following commands:
+
+fstool service stop
+
+After the command prompt is returned. Then run:
+
+watch fstool service status
+
+Wait for it to say "CounterACT Appliance is not running". Then run:
+
+"init 0"
+
+This will completely power off the server.
+
+To restart:
+ 
+Push power switch on CounterACT appliance until appliance starts. 
+ 
+From console upon appliance boot.  Login and run:
+ 
+watch fstool service status
+ 
+Look for “CounterACT Appliance is running”
+ 
+If it says “CounterACT Appliance is not running”, then run:
+ 
+fstool service start
