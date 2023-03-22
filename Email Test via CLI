@@ -1,0 +1,32 @@
+Forescout KB Article: https://forescout.force.com/support/s/article/Send-test-E-mail-option-failed
+
+# Run the following command:
+
+fstool mail_conf 
+
+Then you will be presented with options 1-8. Option 4 will send a test E-mail
+
+## Example Results
+
+SMTP: Net::SMTP=GLOB(0x93936b0)<<< 220 ***********************************************
+SMTP: Net::SMTP=GLOB(0x93936b0)>>> EHLO client.example.com
+SMTP: Net::SMTP=GLOB(0x93936b0)<<< 250-smtpmail.example.com
+SMTP: Net::SMTP=GLOB(0x93936b0)<<< 250-PIPELINING
+SMTP: Net::SMTP=GLOB(0x93936b0)<<< 250-SIZE 10240000
+SMTP: Net::SMTP=GLOB(0x93936b0)<<< 250-VRFY
+SMTP: Net::SMTP=GLOB(0x93936b0)<<< 250-ETRN
+SMTP: Net::SMTP=GLOB(0x93936b0)<<< 250-STARTTLS
+SMTP: Net::SMTP=GLOB(0x93936b0)<<< 250-ENHANCEDSTATUSCODES
+SMTP: Net::SMTP=GLOB(0x93936b0)<<< 250-8BITMIME
+SMTP: Net::SMTP=GLOB(0x93936b0)<<< 250 DSN
+SMTP: mail:104399:1590651592.987141:Thu May 28 13:09:52 2020: Athentication for user example@example.com status=
+SMTP: mail:104399:1590651592.987363:Thu May 28 13:09:52 2020: msgFile=spool/mail/1590651592.9756-553388915897699.msg.tmp/body.txt, entry={domain=example,mailhosts=[IP address],to=[example@example.com]}send_status={}
+
+Failed to send message
+
+
+## NOTE
+
+Validate the port being used for email
+Validate if the Forescout appliance IP or sending email address needs to be allowed or is being blocked
+Validate if using secure SMTP over TLS that you have a certificate imported to Forescout
